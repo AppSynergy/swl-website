@@ -165,10 +165,10 @@ module.exports = React.createClass({
 			</table></div>
 			</div>
 
-			<div className="infoBox"><div className="flexWrapper">
+			<div className="infoBox"><div className="infoBoxInner">
 				{selBattle && <img src={maps[selBattle.map] && maps[selBattle.map].thumbnail || ''}
-					className="thumbnail flexItem" />}
-				<div className="flexItem">
+					className="thumbnail" />}
+				<div className="battleMeta">
 					{selFounder && selFounder.inGame &&
 						<p><img src={require('img/battle.png')} /> This battle is running.</p>}
 					{selBattle && selBattle.passworded &&
@@ -185,7 +185,7 @@ module.exports = React.createClass({
 					users={selBattle && Team.toList(selBattle.teams) || {}}
 					battles={this.state.battles}
 				/>
-				<div className="flexItem">
+				<div className="battleJoinBtn">
 					{selBattle && <button onClick={_.partial(this.handleJoin, selBattle.id)}>JOIN</button>}
 				</div>
 			</div></div>
