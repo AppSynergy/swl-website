@@ -94,11 +94,10 @@
 		+flexWrapper
 		+flexColumn
 		+flexStartAlign
-	div.filterBox, img.thumbnail, div.battleMeta, div.battleJoinButton
+	.filterBox, .thumbnail, .battleMeta, .battleJoinButton
 		+flexNormal
-	div.userList, div.tableWrapper
+	.userList, .tableWrapper
 		+flexExpand
-
 
 // Layout
 .battleList
@@ -107,10 +106,12 @@
 	> *
 		+setHeight(100%)
 		float: left
+	.main
+		overflow-y: hidden
+		&::-webkit-scrollbar
+			display: none
 	.tableWrapper
 		overflow: auto
 		position: relative
-	table
-		width: 100%
 	.infoBox
 		min-width: $infoWidth
