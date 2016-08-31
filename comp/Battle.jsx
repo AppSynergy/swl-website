@@ -226,22 +226,8 @@ module.exports = React.createClass({
 		}
 
 		return <div className="battleRoom">
-
 			<div className="leftSide">
-				<BattleMap
-					map={this.state.map}
-					boxes={this.state.boxes}
-					team={myTeam}
-					download={_.find(downloads, { name: this.state.map, type: 'map' })}
-					onChangeTeam={this.handleChangeTeam}
-					onAddBox={this.handleAddBox}
-					onRemoveBox={this.handleRemoveBox}
-					onClearBoxes={this.handleClearBoxes}
-					gameInfoStore={this.props.gameInfoStore}
-				/>
-			</div>
-
-			<div className={'rightSide' + (this.state.chatLog ? ' withChat' : '')}>
+			<div className="battleRoomLeftInner">
 				<BattlePanel
 					game={this.state.game}
 					engine={this.state.engine}
@@ -265,6 +251,24 @@ module.exports = React.createClass({
 					onSelectGame={_.partial(this.handleGameDialog, true)}
 					onOptions={_.partial(this.handleModOptionsDialog, true)}
 				/>
+
+				<BattleMap
+					map={this.state.map}
+					boxes={this.state.boxes}
+					team={myTeam}
+					download={_.find(downloads, { name: this.state.map, type: 'map' })}
+					onChangeTeam={this.handleChangeTeam}
+					onAddBox={this.handleAddBox}
+					onRemoveBox={this.handleRemoveBox}
+					onClearBoxes={this.handleClearBoxes}
+					gameInfoStore={this.props.gameInfoStore}
+				/>
+			</div>
+			</div>
+
+			<div className={'rightSide' + (this.state.chatLog ? ' withChat' : '')}>
+
+				<div className="battleRoomRightInner">
 				<BattleUserList
 					teams={teams}
 					sides={showSides && this.state.gameInfo.games[this.state.game].sides}
@@ -301,6 +305,7 @@ module.exports = React.createClass({
 						}).flatten().pluck('name').value()}
 					/>
 				</div>}
+			</div>
 			</div>
 
 			{this.state.addingBot && <ModalWindow onClose={this.handleCancelBot}

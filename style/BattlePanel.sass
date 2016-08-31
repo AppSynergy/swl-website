@@ -6,6 +6,7 @@
 	$panelRightWidth: 25em
 	+chiliBorder
 	position: relative
+	height: auto
 	> *
 		+setHeight(100%)
 		float: left
@@ -16,7 +17,8 @@
 		font-size: small
 	> button, > button:disabled
 		+chili3dBox
-		width: calc(100% - #{$panelRightWidth})
+		display: inline-block
+		//width: calc(100% - #{$panelRightWidth})
 		height: 100%
 		color: white
 		background-image: none
@@ -36,7 +38,7 @@
 		&.spectate
 			background-color: #82EAEE
 	.panelRight
-		width: $panelRightWidth
+		//width: $panelRightWidth
 		padding: 0.6em
 		.gameName
 			margin-top: 1.3em

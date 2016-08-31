@@ -65,9 +65,11 @@
 .battleMap .map.mapBg1
 	background-image: url('../img/map_bg.jpg')
 	background-size: 100% 100%
+	height: 100%
 .battleMap .map.mapBg2
 	background-image: url('../img/map_bg2.jpg')
 	background-size: 100% 100%
+	height: 100%
 
 .startboxPanel
 	position: absolute
@@ -125,8 +127,9 @@
 
 .battleMap
 	$mapTitleHeight: 2.6em
-	height: 100%
+	height: 80%
 	.mapTitle
+		margin-top: 1em
 		+setHeight($mapTitleHeight)
 	.map
 		+setHeight(calc(100% - #{$mapTitleHeight}))

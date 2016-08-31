@@ -1,6 +1,7 @@
 @import globals
 @import sizing
 @import chili
+@import flex
 
 .battleRoom
 	$panelHeight: 10.5em
@@ -10,30 +11,61 @@
 	> *
 		+setHeight(100%)
 		float: left
+	.battlePanel
+		//+setHeight($panelHeight)
 	.leftSide
-		width: calc(100% - #{$rightWidth})
+		//width: calc(100% - #{$rightWidth})
 		//.battleMap
 	.rightSide
-		width: $rightWidth
+		//width: $rightWidth
 		position: relative
-		.battlePanel
-			+setHeight($panelHeight)
 		.userList
-			+setHeight(calc(100% - #{$panelHeight}))
+			//+setHeight(calc(100% - #{$panelHeight}))
 	.rightSide.withChat
 		.userList
-			+setHeight(calc(100% - #{$panelHeight} - #{$chatHeight}))
+			//+setHeight(calc(100% - #{$panelHeight} - #{$chatHeight}))
 		.votingBar
 			position: absolute
 			top: calc(100% - #{$chatHeight})
 			+setWidth(100%)
 		.battleChat
-			+setHeight(#{$chatHeight})
+			//+setHeight(#{$chatHeight})
 			.chatLog
-				+setHeight(calc(100% - #{$chatInputHeight}))
+				//+setHeight(calc(100% - #{$chatInputHeight}))
 			.chatInput
-				+setHeight($chatInputHeight)
+				//+setHeight($chatInputHeight)
 				padding-top: 1px
+
+
+.battleRoom
+	+flexWrapper
+	+flexRow
+	+flexStartAlign
+	.rightSide
+		+flexExpand
+		.battleRoomRightInner
+			+flexWrapper
+			+flexColumn
+			+flexStartAlign
+			.userList
+				+flexExpand
+			.votingBar
+				+flexNormal
+			.battleChat
+				+flexNormal
+				.chatLog
+					height: 13em
+
+	.leftSide
+		+flexExpand
+		.battleRoomLeftInner
+			+flexWrapper
+			+flexColumn
+			+flexStartAlign
+			.battlePanel
+				+flexNormal
+			.battleMap
+				+flexNormal
 
 .battleRoom .modoptions .modalWindow
 	.modalContent
