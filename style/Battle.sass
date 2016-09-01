@@ -64,8 +64,14 @@
 			+flexStartAlign
 			.battlePanel
 				+flexNormal
-			.battleMap
-				+flexNormal
+			.battleMapOuter
+				+flexExpand
+				.battleMap
+					+flexWrapper
+					+flexColumn
+					+flexStartAlign
+					.map
+						+flexExpand
 
 .battleRoom .modoptions .modalWindow
 	.modalContent

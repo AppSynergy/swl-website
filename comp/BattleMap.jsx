@@ -262,7 +262,6 @@ module.exports = React.createClass({
 				removing: this.state.drawingMode === DrawingMode.REMOVE,
 			})}>
 				<img
-				style={{height:'80%'}}
 					onLoad={this.handleLoad}
 					onMouseDown={drawing ? this.handleStartDrawing : _.noop}
 					onMouseMove={this.handleDraw}

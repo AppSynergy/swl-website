@@ -3,6 +3,7 @@
 @import chili
 
 .battlePanel
+	$panelHeight: 10.5em
 	$panelRightWidth: 25em
 	+chiliBorder
 	position: relative
@@ -19,7 +20,7 @@
 		+chili3dBox
 		display: inline-block
 		//width: calc(100% - #{$panelRightWidth})
-		height: 100%
+		height: $panelHeight
 		color: white
 		background-image: none
 		transition-property: background-color

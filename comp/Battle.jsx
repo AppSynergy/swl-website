@@ -252,6 +252,7 @@ module.exports = React.createClass({
 					onOptions={_.partial(this.handleModOptionsDialog, true)}
 				/>
 
+				<div className="battleMapOuter">
 				<BattleMap
 					map={this.state.map}
 					boxes={this.state.boxes}
@@ -263,6 +264,7 @@ module.exports = React.createClass({
 					onClearBoxes={this.handleClearBoxes}
 					gameInfoStore={this.props.gameInfoStore}
 				/>
+				</div>
 			</div>
 			</div>
 

@@ -23,11 +23,13 @@
 		width: 100%
 		height: 100%
 		img
+			//height: 160px
 			+centerInBox
-			max-width: 100%
-			max-height: 100%
-			min-width: 50%
-			min-height: 50%
+			//object-fit: contain
+			max-width: 90%
+			max-height: 90%
+			//min-width: 50%
+			//min-height: 50%
 		.startbox
 			opacity: 1.0
 		&.adding, &.adding .startbox
@@ -65,11 +67,11 @@
 .battleMap .map.mapBg1
 	background-image: url('../img/map_bg.jpg')
 	background-size: 100% 100%
-	height: 100%
+	//height: 100%
 .battleMap .map.mapBg2
 	background-image: url('../img/map_bg2.jpg')
 	background-size: 100% 100%
-	height: 100%
+	//height: 100%
 
 .startboxPanel
 	position: absolute
@@ -127,9 +129,9 @@
 
 .battleMap
 	$mapTitleHeight: 2.6em
-	height: 80%
+	//height: 50%
 	.mapTitle
-		margin-top: 1em
-		+setHeight($mapTitleHeight)
+		margin: 0.6em 0
+		//+setHeight($mapTitleHeight)
 	.map
-		+setHeight(calc(100% - #{$mapTitleHeight}))
+		//+setHeight(calc(100% - #{$mapTitleHeight}))
