@@ -3,14 +3,13 @@
 @import chili
 
 $navHeight: 4.0em
-$navBottomMargin: 1.2em
+$navBottomMargin: 0.6em
 
 .appContent > nav
 	+setHeight($navHeight)
 	font-family: $titleFont
-	padding: 0.5em
-	padding-top: 0
-	margin: 0 0.3em
+	padding: 0
+	margin: 0
 	margin-bottom: $navBottomMargin
 	-webkit-user-select: none
 	> span
@@ -95,7 +94,7 @@ $downloadBarTransitionDuration: 200ms
 .appContent .topRight
 	position: absolute
 	top: 0
-	right: 5px
+	right: 1em
 	transition-property: top
 	transition-duration: $downloadBarTransitionDuration
 	> *

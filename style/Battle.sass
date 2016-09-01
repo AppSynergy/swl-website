@@ -25,9 +25,9 @@
 		.userList
 			//+setHeight(calc(100% - #{$panelHeight} - #{$chatHeight}))
 		.votingBar
-			position: absolute
-			top: calc(100% - #{$chatHeight})
-			+setWidth(100%)
+			//position: absolute
+			//top: calc(100% - #{$chatHeight})
+			//+setWidth(100%)
 		.battleChat
 			//+setHeight(#{$chatHeight})
 			.chatLog
@@ -49,15 +49,18 @@
 			+flexStartAlign
 			.userList
 				+flexExpand
+				overflow-y: auto
 			.votingBar
 				+flexNormal
 			.battleChat
+				margin-top: 1em
 				+flexNormal
 				.chatLog
-					height: 13em
+					height: 15em
 
 	.leftSide
 		+flexExpand
+		margin-right: 1em
 		.battleRoomLeftInner
 			+flexWrapper
 			+flexColumn
